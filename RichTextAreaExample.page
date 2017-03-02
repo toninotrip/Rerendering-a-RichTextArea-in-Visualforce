@@ -1,5 +1,4 @@
 <apex:page controller="RichTextAreaExampleController" id="page">
-
     <apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"/>
     <script src="https://cdn.ckeditor.com/4.6.2/standard/ckeditor.js"></script>
     <script type="text/javascript">
@@ -10,46 +9,46 @@
             CKEDITOR.replaceAll('ckeditor');    
         }
         function setCKEditorValues(){
-        	//here we assign to our hidden textarea the value of the visible one  
-			$j("[id$='hidden_text_area_field']").val(CKEDITOR.instances[$j("[id$='text_area_field']").attr('id')].getData());							
-		}       
+            //here we assign to our hidden textarea the value of the visible one  
+	    $j("[id$='hidden_text_area_field']").val(CKEDITOR.instances[$j("[id$='text_area_field']").attr('id')].getData());							
+	}       
     </script>   
     <apex:form id="main_form">
         <apex:pageMessages id="pMessages"/>
         <apex:pageBlock id="main_pblock" title="CKEditor Example">
-        	<apex:outputLink target="_blank" value="/{!acc.Id}">Your account</apex:outputLink>	
-        	<br/><br/>
-	        <apex:commandButton id="trigger_button"
-	                            value="Text Area, come out!"
-	                            reRender="main_form">
-	            <apex:param value="true" assignTo="{!showButton}"/>
-	        </apex:commandButton>
-	        <br/>
-	        <apex:outputPanel rendered="{!showButton}">   
-	         <apex:pageBlockSection columns="1">               
-	             <script type="text/javascript">
+            <apex:outputLink target="_blank" value="/{!acc.Id}">Your account</apex:outputLink>	
+            <br/><br/>
+	    <apex:commandButton id="trigger_button"
+				value="Text Area, come out!"
+				reRender="main_form">
+	        <apex:param value="true" assignTo="{!showButton}"/>
+	    </apex:commandButton>
+	    <br/>
+	    <apex:outputPanel rendered="{!showButton}">   
+	        <apex:pageBlockSection columns="1">               
+	            <script type="text/javascript">
 	             	//this can also be accomplished by using an apex:actionSupport on the trigger element, calling the same function "on demand"
 	                $j = jQuery.noConflict();
-	             		$j(function(){
+	                $j(function(){
 	                    reloadCKEditor();
 	                })
-	             </script>
-	             <apex:pageBlockSectionItem >  
-	             	<apex:outputLabel>Rich Text Area</apex:outputLabel>                
-             		<apex:outputPanel>                      
-		            	<apex:inputTextArea id="text_area_field"
-		                                    value="{!acc.Rich_Text_Area__c}"                                     
-		                                    richtext="false" 
-		                                    styleClass="ckeditor"/>
-		            	<apex:inputHidden id="hidden_text_area_field" value="{!acc.Rich_Text_Area__c}"/>                    	                   
-	            	</apex:outputPanel>
-	            </apex:pageBlockSectionItem> 
-	          	</apex:pageBlockSection>
-	        	<apex:commandButton value="Save" 
-	        						action="{!updateAccount}" 
-	        						reRender="main_form"
-	        						onclick="setCKEditorValues();"/>
-	    	</apex:outputPanel>
-    	</apex:pageBlock>
-	</apex:form>
+	            </script>
+ 		   <apex:pageBlockSectionItem >  
+		        <apex:outputLabel>Rich Text Area</apex:outputLabel>                
+		    	<apex:outputPanel>                      
+		            <apex:inputTextArea id="text_area_field"
+						value="{!acc.Rich_Text_Area__c}"                                     
+						richtext="false" 
+						styleClass="ckeditor"/>
+		            <apex:inputHidden id="hidden_text_area_field" value="{!acc.Rich_Text_Area__c}"/>                    	                   
+		        </apex:outputPanel>
+ 		    </apex:pageBlockSectionItem> 
+	        </apex:pageBlockSection>
+	        <apex:commandButton value="Save" 
+		                    action="{!updateAccount}" 
+				    reRender="main_form"
+				    onclick="setCKEditorValues();"/>
+            </apex:outputPanel>
+        </apex:pageBlock>
+    </apex:form>
 </apex:page>
