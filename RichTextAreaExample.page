@@ -37,10 +37,10 @@
 		        <apex:outputLabel>Rich Text Area</apex:outputLabel>                
 		    	<apex:outputPanel>                      
 		            <apex:inputTextArea id="text_area_field"
-						value="{!acc.Rich_Text_Area__c}"                                     
+						value="{!acc.RichText_Area__c}"                                     
 						richtext="false" 
 						styleClass="ckeditor"/>
-		            <apex:inputHidden id="hidden_text_area_field" value="{!acc.Rich_Text_Area__c}"/>                    	                   
+		            <apex:inputHidden id="hidden_text_area_field" value="{!acc.RichText_Area__c}"/>                    	                   
 		        </apex:outputPanel>
  		    </apex:pageBlockSectionItem> 
 	        </apex:pageBlockSection>
