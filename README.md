@@ -1,6 +1,7 @@
 # Rerendering-a-RichTextArea-in-Visualforce
-Simple solution to 'Rerender is not currently supported with rich text editing enabled' Visualforce error
+A simple solution to 'Rerender is not currently supported with rich text editing enabled' Visualforce error
 
+## Check out [this 5 mins reading](http://google.com/ "Go to the post") for a more detailed use-case
 
 **Prerequisites**
 
