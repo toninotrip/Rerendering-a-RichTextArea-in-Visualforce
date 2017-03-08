@@ -2,6 +2,8 @@
 A simple solution to 'Rerender is not currently supported with rich text editing enabled' Visualforce error
 
 ### Check out [this 5 mins reading](http://google.com/ "Go to the post") for a more detailed use-case
+### Check out <a href="http://google.com/" title="Go to the post" target="_blank">this 5 mins reading</a> for a more detailed use-case
+
 
 **Prerequisites**
 
